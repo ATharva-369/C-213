@@ -2,7 +2,7 @@ import socket
 from  threading import Thread
 from pynput.mouse import Button, Controller
 from screeninfo import get_monitors
-import pyautogui
+import autopy
 
 
 
@@ -15,7 +15,6 @@ screen_height = None
 
 
 mouse = Controller()
-i
 
 
 def getDeviceSize():
@@ -36,7 +35,7 @@ def acceptConnections():
 
 		print(f"Connection established with {client_socket} : {addr}")
 
-		thread1 = Thread(target = recieveMsg, args=(client_socket))
+		thread1 = Thread(target = recieveMsg, args=(client_socket, ))
 		thread1.start()
 
 def recieveMsg(client_socket):
